@@ -1,10 +1,10 @@
 clear; clc; close all;
 %%
-fs = 1000;
+fs = 200;
 ts = 1/fs;
 
 f0 = 50;
-N = 1000;
+N = 100;
 
 t = (0:N-1)*ts;
 x = exp(1j*2*pi*f0*t);
@@ -16,4 +16,7 @@ f = ((0:K-1)/K - 1/2)*fs;
 figure(1)
 stem(f,abs(X))
 vline(f0)
+xlabel('Frequency (Hz)')
+ylabel('Amplitude')
+title('Spectrum of exponential signal')
 grid on

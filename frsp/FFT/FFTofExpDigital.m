@@ -2,6 +2,7 @@ clear; clc; close all;
 %%
 f0 = 0.285;
 N = 20;
+x = exp(1j*2*pi*f0*(0:N-1));
 
 %% DTFT
 fLimit = 0.5;
@@ -18,8 +19,6 @@ end
 X = X/N;
 
 %% FFT
-x = exp(1j*2*pi*f0*(0:N-1));
-
 figure(1)
 subplot(2,1,1)
 K1 = 20;
