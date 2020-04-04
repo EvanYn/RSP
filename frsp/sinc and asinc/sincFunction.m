@@ -5,6 +5,7 @@ f = linspace(-fLimit,fLimit,1001);
 X = sinc(f);
 
 figure(1)
+subplot(2,1,1)
 plot(f,X)
 % sinc funtion 3 dB width
 hline(1/sqrt(2),'r:')
@@ -16,7 +17,7 @@ ylabel('Amplitude')
 title('sinc funtion')
 grid on
 
-figure(2)
+subplot(2,1,2)
 plot(f,db(X))
 % sinc function  first sidelobe peak 
 hline(-13.26, 'r:')

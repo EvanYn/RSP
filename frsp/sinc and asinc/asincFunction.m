@@ -17,14 +17,19 @@ for i = 1:length(f)
 end
 
 figure(1)
+subplot(2,1,1)
 plot(f, X);
 xlabel('f (Cycle/Sample)')
 ylabel('|X(f)|')
 title('DTFT of a sampled constant-frequency complex exponential')
 grid on
 
-figure(2)
+subplot(2,1,2)
 plot(f, db(X/max(X)));
+% asinc function  first sidelobe peak 
+hline(-13.19, 'r:')
+text(-fLimit,-13.19 + 1.5,'-13.19 dB', 'Color', 'red')
+ylim([-40 0])
 xlabel('f (Cycle/Sample)')
 ylabel('|X(f)|')
 title('DTFT of a sampled constant-frequency complex exponential')
