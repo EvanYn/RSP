@@ -15,6 +15,7 @@ for i = 1:length(f)
         X(i) = abs( sin(N*pi*(f(i)-f0))/sin(pi*(f(i)-f0)) );
     end
 end
+X = X/N;
 
 figure(1)
 subplot(2,1,1)
