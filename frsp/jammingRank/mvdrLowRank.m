@@ -9,12 +9,12 @@ fsp_s = dl*sind(theta_s);
 as = exp(1j*2*pi*fsp_s.*(0:N-1)');
 
 theta_j = [-30 30 60];
+JNR = [10 20 30];
 Nj = length(theta_j);
 
 fsp_j = dl*sind(theta_j);
 Aj = exp(1j*2*pi*fsp_j.*(0:N-1)');
 
-JNR = [10 20 30];
 sigma_j = 10.^(JNR/20);
 
 Rj = Aj*diag(sigma_j.^2)*Aj';
@@ -52,5 +52,10 @@ P_tilde = abs(P_tilde)/max(abs(P_tilde));
 plot(theta,db(P,'power'))
 hold on
 plot(theta,db(P_tilde,'power'))
+ylim([-40 0])
+vline(theta_s)
 vline(theta_j)
 legend('element space', 'beam space')
+xlabel('\theta (\circ)')
+ylabel('Amplitude (dB)')
+title('beampattern of element space and beam space')

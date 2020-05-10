@@ -46,7 +46,6 @@ hold on
 plot(theta,db(P_super,'power'));
 plot(theta,db(P_music,'power'));
 vline(theta_j)
-% xlim([-90 90])
 xlabel('\theta (\circ)')
 ylabel('PSD (dB)')
 title('PSD of Jamming covariance matirx')

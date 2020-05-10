@@ -20,7 +20,7 @@ R = Rj + eye(N);
 [V, D] = eig(R);
 [eigval, I] = sort(abs(diag(D)),'descend');
 figure(1)
-plot(db(abs(eigval),'power'))
+plot(db(abs(eigval),'power'),'--s')
 xlabel('index')
 ylabel('eigen value (dB)')
 title('eigen spectrum of interference covariance matirx')
